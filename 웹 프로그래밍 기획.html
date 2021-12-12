@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>코로나.. 어디까지 알고 있니..?</title>
+    <style>
+      /* CSS 스타일 시트 작성 */
+      body {
+        background-color: rgb(191, 255, 223);
+      }
+      h3 {
+        color: purple;
+      }
+      hr {
+        border: 5px solid yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h3
+      onmouseover="this.style.backgroundColor='orchid'"
+      onmouseout="this.style.backgroundColor='white'"><b>코로나.. 어디까지 알고
+      있니..?</b></h3>
+    </h3>
+    <hr />
+    <details>
+        <summary>코로나 증상의 종류</summary>
+        <p> 임상 증상은 무증상, 경증, 중등증, 중증까지 다양- 주요 증상으로는 발열(37.5℃ 이상), 기침, 호흡곤란, 오한, 근육통, 두통, 인후통, 후각·미각소실<br>
+            - 그 외에 피로, 식욕감소, 가래, 소화기증상(오심, 구토, 설사 등), 혼돈, 어지러움, 콧물이나 코막힘, 객혈, 흉통, 결막염, 피부 증상 등이 다양하게 나타남</p>
+     </details>
+     <br>
+     <a href="코로나 신고.html">코로나 의심 신고 방법</a><br>
+     <a href="https://www.mohw.go.kr/react/popup_200128_3.html ">선별 진료소 확인 방법</a><br>
+    <script>
+        function query() {
+            var ret = confirm("코로나 확진자 수 를 확인하는 링크로 이동하시겠습니까?");
+            return ret; // confirm()의 리턴 값은 true 또는 false
+        }
+        
+        function noAction(e) {
+            e.preventDefault(); // 이벤트의 디폴트 행동 강제취소
+        }
+        </script>
+        </head>
+        <body>
+        <p>코로나 확진자 수</p>
+        <a href="http://ncov.mohw.go.kr/bdBoardList.do"
+            onclick="return query()">
+            <mark>확인</mark></a><br>
+         <br>
+    <details>
+        <summary>사회적 거리두기 단계 확인</summary>
+        <p> 지금 업데이트 시간 (21.12.12 오후 6시 20분) 기준으로 전국적으로 거리두기 단계가 아닌 위드코로나를 시행하고 있습니다.<br># 변경되는 사항이나 거리두기 단계는 아래의 링크를 통해 상시 업데이트를 할 예정입니다.<br></p>
+        <a href = 'http://ncov.mohw.go.kr'>링크</a><br>
+     </details>
+     
+    <hr />
+    <script>
+        // Date 객체 생성
+        var today = new Date(); 
+        
+        // Date 객체의 toLocaleString() 메소드 호출
+        document.write("현재 시간 : " + today.toLocaleString() + "<br>");
+        var win=null;
+        function showHTML() {
+	        if(win == null || win.closed)
+		        win = window.open("", "outWin", "width=250,height=150");
+
+	        var textArea = document.getElementById("srcText");
+	        win.document.open();
+	        win.document.write(textArea.value);
+	        win.document.close();
+}
+</script>
+</head>
+<body>
+<h3>설문지 작성 </h3>
+<p>웹사이트를 이용해보시고 불편하신 점이나 오류등을 말씀해주세요!</p>
+<textarea id="srcText" rows="10" cols="40"></textarea>
+<br>
+<br>
+<button onclick="showHTML()">작성 완료</button><br>
+<p>컴퓨터 전자시스템 공학과 202001294 목진훈</p>
+<img src="코로나 사진.jpg">
+<img src="코로나 사진 2.jfif",width="500px" height="400px">
+    </script>
+  </body>
+</html>
